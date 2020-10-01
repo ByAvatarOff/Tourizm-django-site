@@ -1,0 +1,106 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+Страны
+{% endblock %}
+
+
+{% block image %}
+<style>
+body {
+background-image: url(static/image/31.png);
+          background-position: center bottom;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 92%;
+}
+</style>
+
+<body>
+<div class="dropdown_northAmerica">
+  <button class="btn btn-warning rounded"
+          type="button" id="dropdownMenu1" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"><h5 class="text-center">Северная Америка</h5>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <span class="dropdown-item-text text-info"><h5>Топ стран</h5></span>
+    <a class="dropdown-item" href="#!"><h5>США</h5></a>
+    <a class="dropdown-item" href="#!"><h5>Канада</h5></a>
+    <a class="dropdown-item" href="#!"><h5>Мексика</h5></a>
+  </div>
+</div>
+
+<div class="dropdown_southAmerica">
+  <button class="btn btn-warning rounded"
+          type="button" id="dropdownMenu2" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"><h5 class="text-center">Южная Америка</h5>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <span class="dropdown-item-text text-info"><h5>Топ стран</h5></span>
+    <a class="dropdown-item" href="#!"><h5>Бразилия</h5></a>
+    <a class="dropdown-item" href="#!"><h5>Аргентина</h5></a>
+    <a class="dropdown-item" href="#!"><h5>Чили</h5></a>
+  </div>
+</div>
+
+<div class="dropdown_Europe">
+  <button class="btn btn-warning rounded"
+          type="button" id="dropdownMenu3" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"><h5 class="text-center">Европа</h5>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <span class="dropdown-item-text text-info"><h5>Топ стран</h5></span>
+    <a class="dropdown-item" href="#!"><h5>Греция</h5></a>
+    <a class="dropdown-item" href="#!"><h5>Кипр</h5></a>
+    <a class="dropdown-item" href="#!"><h5>Турция</h5></a>
+    <a class="dropdown-item" href="#!"><h5>Болгария</h5></a>
+    <a class="dropdown-item" href="#!"><h5>Италия</h5></a>
+    <a class="dropdown-item" href="#!"><h5>Испания</h5></a>
+    <a class="dropdown-item" href="#!"><h5>Франция</h5></a>
+  </div>
+</div>
+
+
+<div class="dropdown_Russia">
+  <button class="btn btn-warning rounded"
+          type="button" id="dropdownMenu4" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"><h5 class="text-center">Россия</h5>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <span class="dropdown-item-text text-info"><h5>Топ стран</h5></span>
+    <a class="dropdown-item" href="#!"><h5>Москва</h5></a>
+    <a class="dropdown-item" href="#!"><h5>Санкт-Петербруг</h5></a>
+    <a class="dropdown-item" href="#!"><h5>Сочи</h5></a>
+    <a class="dropdown-item" href="#!"><h5>Казань</h5></a>
+    <a class="dropdown-item" href="#!"><h5>Ялта</h5></a>
+  </div>
+</div>
+
+<div class="dropdown_Australia">
+  <button class="btn btn-warning rounded"
+          type="button" id="dropdownMenu5" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"><h5 class="text-center">Австралия</h5>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <span class="dropdown-item-text text-info"><h5>Топ стран</h5></span>
+    <a class="dropdown-item" href="#!"><h5>Новая Зеландия</h5></a>
+    <a class="dropdown-item" href="#!"><h5>Фиджи</h5></a>
+  </div>
+</div>
+
+<div class="dropdown_Africa">
+  <button class="btn btn-warning rounded"
+          type="button" id="dropdownMenu6" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"><h5 class="text-center">Африка</h5>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <span class="dropdown-item-text text-info"><h5>Топ стран</h5></span>
+    <a class="dropdown-item" href="#!"><h5>Египет</h5></a>
+    <a class="dropdown-item" href="#!"><h5>Тунис</h5></a>
+    <a class="dropdown-item" href="#!"><h5>Марокко</h5></a>
+    <a class="dropdown-item" href="#!"><h5>ЮАР</h5></a>
+  </div>
+</div>
+</body>
+{% endblock %}

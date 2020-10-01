@@ -1,0 +1,12 @@
+{% extends 'main/tours.html' %}
+
+{% block filtering %}
+
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-2"><h5>Страна для отдыха</h5></div>
+    <input type="text" class="form-control" name="country" placeholder="Введите страну">
+    <button type="submit" class="btn btn-primary mt-2">Найти</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<img class="mx-auto d-block" src="{% static 'image/authentication.jpg' %}" alt="" width="210" height="144">
+<h1 class="text-center">Авторизируйтесь</h1>
+{% if error %}
+<div class="text-center" style="color:red;">{{ error }}</div>
+{% endif %}
+<div class="d-flex align-content-end justify-content-center mt-3">
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" class="form-control mb-2" name="username" placeholder="Enter nickname" required=""
+               autofocus="">
+        <input type="password" class="form-control mb-2" name="password" placeholder="Password" required="">
+        <a class="bnt bnt-outline-primary" href="{% url 'register' %}">Если у вас нет учетной запипи, зарегестрируйтесь </a><br>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"><button class="btn btn-lg btn-primary mt-3 " type="submit">Войти</button></div>
+            <div class="col-lg-4"></div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

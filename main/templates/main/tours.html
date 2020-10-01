@@ -1,0 +1,118 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Туры
+{% endblock %}
+{% block tours %}
+<div class="row">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-8"><h1 class="text-center">Туры по всем странам мира</h1></div>
+</div>
+<div class="row">
+
+    <div class="col-sm-3 alert alert-secondary mt-2 ml-5">
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-2"><h5>Страна для отдыха</h5></div>
+            <input type="text" class="form-control" name="country" placeholder="Введите страну">
+            <div class="row">
+                <div class="col mb-2 mt-3">
+                    <label><h5>От</h5></label>
+                    <input type="number" class="form-control" name="min_price" placeholder="0">
+                </div>
+                <div class="col mt-3 mb-4">
+                    <label><h5>До</h5></label>
+                    <input type="number" class="form-control" name="max_price" placeholder="9999">
+                </div>
+            </div>
+            <label><h5>Дата отправления</h5></label>
+            <input type="date" class="form-control" name="data" placeholder="Введите дату">
+            <div class="mt-4">
+                <button type="submit" class="btn btn-block btn-primary mt-2">Найти</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="col-sm-8">
+        {% if tasks %}
+        {% for el in tasks %}
+        <div class="alert alert-secondary mt-2">
+            {% if el.image %}
+
+
+
+
+
+
+            <div class="mb-0 mt-2"><img class="img-responsive img-left" src="{{ el.image.url}}" width="280"
+                                        height="170"></div>
+            {% else %}
+            <div><img class="img-responsive img-left" src="{% static 'image/none.jpg' %}" width="280" height="170">
+            </div>
+            {% endif %}
+
+            {% if el.stars == '1' %}
+            <div><h2>{{ el.title }}<img class="img-responsive img-set" src="{% static 'image/stars/1 star.png' %}"
+                                        width="130" height="30"></h2></div>
+            {% endif %}
+
+            {% if el.stars == '2' %}
+            <div><h2>{{ el.title }}<img class="img-responsive img-set" src="{% static 'image/stars/2 star.png' %}"
+                                        width="130" height="30"></h2></div>
+            {% endif %}
+
+            {% if el.stars == '3' %}
+            <div><h2>{{ el.title }}<img class="img-responsive img-set" src="{% static 'image/stars/3 star.png' %}"
+                                        width="130" height="30"></h2></div>
+            {% endif %}
+
+            {% if el.stars == '4' %}
+            <div><h2>{{ el.title }}<img class="img-responsive img-set" src="{% static 'image/stars/4 star.png' %}"
+                                        width="130" height="30"></h2></div>
+            {% endif %}
+
+            {% if el.stars == '5' %}
+            <div><h2>{{ el.title }}<img class="img-responsive img-set" src="{% static 'image/stars/5 star.png' %}"
+                                        width="130" height="30"></h2></div>
+            {% endif %}
+
+
+            <div><h5>{{ el.country }}</h5></div>
+            <div class="mt-3"><h5>Цена: {{ el.price }}$</h5></div>
+            <div class="mt-3"><h5>Вид поездки: {{el.task}}</h5></div>
+            <br>
+            <div><h6>Дата отправления {{ el.data }}</h6></div>
+            <div><h5>{{ el.description }}</h5></div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}
+{% block footer %}
+<body class="d-flex flex-column min-vh-100">
+
+    <div class="wrapper flex-grow-1"></div>
+    <div class="container-fluid alert bg-secondary mt-5 mb-0">
+        <footer>
+            <div class="container ">
+                <a href="https://vk.com/byavataroff"><img class="mb-2 mr-2" src="static/image/vk.png" width="38"
+                                                          height="38"></a>
+                <a href="https://www.instagram.com/by_avatar_off/"> <img class="mb-2" src="static/image/instagram.png"
+                                                                         width="38" height="38"></a>
+                <h6>@ByAvatarOff 2020</h6>
+                <h6>Телефон: +375296732364</h6>
+                <h6>Наш адрес: Бурдейного 19</h6>
+                <h6>Сайт написанный на Django на тему туризм</h6>
+                <h6>Является лучшим и неповторимым в своем роде</h6>
+            </div>
+        </footer>
+    </div>
+
+{% endblock %}
